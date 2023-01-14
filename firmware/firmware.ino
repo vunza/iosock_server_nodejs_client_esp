@@ -65,12 +65,13 @@ void setupWiFi() {
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   setupWiFi();
 
   // server address, port and URL
-  socketIO.begin(SERVER, 4001, "/socket.io/?EIO=4");
+  //socketIO.begin(SERVER, 4001,"/socket.io/?EIO=4");
+  socketIO.begin(SERVER, 443,"/socket.io/?EIO=4");
 
   socketIO.onEvent(socketIOEvent);
 }
